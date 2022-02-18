@@ -8,7 +8,9 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+
+// UITextFieldDelegate is a set optional methods that you use to manage the editing and validation of text in a text field object
+class WeatherViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
