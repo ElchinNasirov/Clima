@@ -26,5 +26,16 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    // textFieldShouldReturn asks the delegate if the text field should process the pressing of the return button
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // Removes the keyboard when a user clicks on go/return button
+        seacrhTextField.endEditing(true)
+        
+        // prints the text when user clicks on go/return button
+        print(seacrhTextField.text!)
+        return true
+    }
+
 }
 
