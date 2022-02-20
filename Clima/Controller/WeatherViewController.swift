@@ -24,6 +24,8 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func searchPressed(_ sender: UIButton) {
         
+        // Removes the keyboard when a user clicks on search icon
+        seacrhTextField.endEditing(true)
     }
     
     // textFieldShouldReturn asks the delegate if the text field should process the pressing of the return button
