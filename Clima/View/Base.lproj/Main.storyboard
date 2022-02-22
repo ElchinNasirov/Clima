@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -114,7 +114,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="CWP-r8-Jsy" id="8cQ-3l-ufV"/>
                         <outlet property="conditionImageView" destination="mYn-vV-MBC" id="gpD-FU-YB0"/>
-                        <outlet property="seacrhTextField" destination="2eh-wL-W34" id="A5D-be-jfv"/>
+                        <outlet property="searchTextField" destination="2eh-wL-W34" id="rtQ-Xp-dDa"/>
                         <outlet property="temperatureLabel" destination="w9o-tW-03D" id="mF4-vV-JxK"/>
                     </connections>
                 </viewController>

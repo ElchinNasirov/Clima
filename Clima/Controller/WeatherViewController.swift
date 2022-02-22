@@ -19,7 +19,8 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        searchTextField.delegate = self
     }
 
     @IBAction func searchPressed(_ sender: UIButton) {
