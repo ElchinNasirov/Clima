@@ -15,7 +15,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var seacrhTextField: UITextField!
+    @IBOutlet weak var searchTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +25,18 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     @IBAction func searchPressed(_ sender: UIButton) {
         
         // Removes the keyboard when a user clicks on search icon
-        seacrhTextField.endEditing(true)
+        searchTextField.endEditing(true)
     }
     
     // textFieldShouldReturn asks the delegate if the text field should process the pressing of the return button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         // Removes the keyboard when a user clicks on go/return button
-        seacrhTextField.endEditing(true)
+        searchTextField.endEditing(true)
         
         // prints the text when user clicks on go/return button
-        print(seacrhTextField.text!)
+        print(searchTextField.text!)
         return true
     }
-
 }
 
