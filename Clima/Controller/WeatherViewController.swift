@@ -25,19 +25,22 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func searchPressed(_ sender: UIButton) {
         
-        // Removes the keyboard when a user clicks on search icon
+        // Removes the keyboard when user clicks on search icon
         searchTextField.endEditing(true)
     }
     
     // textFieldShouldReturn asks the delegate if the text field should process the pressing of the return button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        // Removes the keyboard when a user clicks on go/return button
+        // Removes the keyboard when user clicks on go/return button
         searchTextField.endEditing(true)
-        
-        // prints the text when user clicks on go/return button
-        print(searchTextField.text!)
+
         return true
+    }
+    
+    // Clears the text field as soon as user done typing and clicks search icon/go button
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        searchTextField.text = ""
     }
 }
 
