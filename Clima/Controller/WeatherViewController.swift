@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 // UITextFieldDelegate is a set optional methods that you use to manage the editing and validation of text in a text field object
 class WeatherViewController: UIViewController, UITextFieldDelegate {
 
@@ -38,6 +37,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    // Doing validation - checking if the textfield is not an empty string (user clicks go without typing anything)
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             return true
