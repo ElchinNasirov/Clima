@@ -52,6 +52,11 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     
     // Clears the text field as soon as user done typing and clicks search icon/go button
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        if let city = searchTextField.text {
+            weatherManager.fetchWeather(cityName: city)
+        }
+        
         searchTextField.text = ""
     }
 }
