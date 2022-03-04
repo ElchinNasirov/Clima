@@ -13,6 +13,8 @@ struct WeatherManager {
     
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
+        
+        //Not adding self. when calling a function because the function is inside the WeatherManager() struct
         performRequest(urlString: urlString)
     }
     
@@ -24,7 +26,7 @@ struct WeatherManager {
             //2. Create a URLSession
             let session = URLSession(configuration: .default)
             
-            //3. Give the session a task
+            //3. Give the session a task            closure
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
                     print(error!)
@@ -32,13 +34,26 @@ struct WeatherManager {
                 }
                 
                 if let safeData = data {
-                    let dataString = String(data:safeData, encoding: .utf8)
-                    print(dataString)
+                    
+                    //Adding self. when calling a function because it's inside the closure
+                    self.parseJSON(weatherData: safeData)
                 }
             }
             
             //4. Start the task
             task.resume()
+        }
+    }
+    
+    //Parsing the data in JSON format
+    func parseJSON(weatherData: Data) {
+        let decoder = JSONDecoder()
+        
+        do {
+            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            print(decodedData.name)
+        } catch {
+            print(error)
         }
     }
 }
